@@ -1,30 +1,97 @@
-# React + TypeScript + Vite
+# IMAGINEX POS Core (v1.0.0)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A lightweight, modern, offline-first Desktop POS & Inventory Management System engineered for retail and spare-parts businesses.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Key Features
 
-## Expanding the ESLint configuration
+- **Offline-First Architecture**: 100% operational without active internet connection. Uses local SQLite.
+- **Fast Billing**: High-speed checkout customized for item searches and part-number lookups.
+- **Smart Inventory**: Track thousands of items, supplier histories, low stock alerts, and variations.
+- **Warranty & Repairs**: Seamless customer return and warranty management module.
+- **Robust Security**: Multi-user roles (Admin, Cashier, Manager) with strict action logs.
+- **Fail-Safe Backups**: One-click local backups with automated secondary cloud synchronization.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Tech Stack
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+| Layer | Technology |
+| :--- | :--- |
+| **Desktop Shell** | Electron |
+| **Frontend Framework** | React (Vite) + TypeScript |
+| **Styling** | Tailwind CSS + shadcn/ui |
+| **Local Database** | Better-SQLite3 |
+| **ORM** | Drizzle ORM |
+| **Cloud Sync (Optional)** | MongoDB Atlas (via API) |
+| **Bundler / Installer** | Electron Builder |
+
+---
+
+## 📂 Directory Structure
+
+```text
+src/
+├── main/                 # Electron main process (OS integration, window management)
+├── preload/              # Electron preload scripts (secure bridge)
+└── renderer/             # React Frontend
+    ├── assets/           # Images, Fonts, Icons
+    ├── components/       # Reusable UI Components (buttons, inputs)
+    ├── features/         # Feature-based modular logic
+    │   ├── billing/      # Checkout, Cart, Printing logic
+    │   ├── inventory/    # Stock, Supplier, Barcodes
+    │   └── reports/      # Sales, Profits, Export logic
+    ├── database/         # Drizzle schema, migrations, and local db connection
+    ├── utils/            # Helper functions, formatters
+    └── types/            # Global TypeScript interfaces
+
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+## ⚙️ Development Setup
+
+### Prerequisites
+
+* Node.js (v18 or higher)
+* npm or pnpm
+
+### Getting Started
+
+1. Clone the repository:
+```bash
+git clone [https://github.com/YOUR_ORG/imaginex-pos-core.git](https://github.com/YOUR_ORG/imaginex-pos-core.git)
+cd imaginex-pos-core
+
+```
+
+
+2. Install dependencies:
+```bash
+npm install
+
+```
+
+
+3. Run in Development Mode:
+```bash
+npm run dev
+
+```
+
+
+4. Build Production Installer (`.exe`):
+```bash
+npm run build
+
+```
+
+
+
+---
+
+Developed with ❤️ by **IMAGINEX**.
+
+*Innovate, Build, and Grow.*
+
