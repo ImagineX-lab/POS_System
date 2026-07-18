@@ -41,3 +41,5 @@ Keep this context active at all times. Do not hallucinate or suggest external li
 - `sale_items`: id, sale_id, product_id, quantity, unit_price, subtotal.
 - `suppliers`: id, name, contact, company.
 - `backups`: id, backup_path, status, created_at.
+
+.
